@@ -17,5 +17,4 @@ class WeightUnitTest {
 	void convertTest() {
 		assertEquals(0.001, WeightUnit.KG.convert(WeightUnit.TN, 10), 0.01);
 	}
-
 }
