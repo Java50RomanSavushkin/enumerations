@@ -50,28 +50,11 @@ class DayOfWeekTest {
 	void minusDaysTest() {
 		assertEquals(DayOfWeek.THU, DayOfWeek.FRI.minusDays(22));
 	}
-	
+
 	@Test
 	void betweenTest() {
 		assertEquals(1, DayOfWeek.FRI.between(DayOfWeek.SAT));
 		assertEquals(6, DayOfWeek.FRI.between(DayOfWeek.THU));
 	}
 
-	
-	 
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
 }

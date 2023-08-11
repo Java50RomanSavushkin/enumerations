@@ -9,7 +9,7 @@ public enum WeightUnit {
 		value = nGrams;
 	}
 
-	public float convert(WeightUnit to, float amount ) {
+	public float convert(WeightUnit to, float amount) {
 		return value * amount / to.value;
 	}
 }
