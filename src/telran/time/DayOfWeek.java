@@ -6,6 +6,7 @@ public enum DayOfWeek {
 
 	String shortName;
 	String fullName;
+	static int N_DAYS = values().length;
 
 	DayOfWeek(String name) {
 		String[] tokens = name.split("#");
@@ -16,4 +17,33 @@ public enum DayOfWeek {
 	public String displayName(TypeDisplay type) {
 		return type == TypeDisplay.SHORT ? shortName : fullName;
 	}
+
+	public int getValue() {
+		return ordinal() + 1;
+	}
+
+	public DayOfWeek plusDays(int days) {
+		int index = (ordinal() + days) % N_DAYS;
+		if (index < 0) {
+			index += N_DAYS;
+		}
+		return values()[index];
+	}
+
+	public DayOfWeek minusDays(int days) {
+		return plusDays(-days);
+	}
+
+	public static int between(DayOfWeek day1, DayOfWeek day2) {
+		int res = day2.ordinal() - day1.ordinal();
+		if (res < 0) {
+			res += N_DAYS;
+		}
+		return res;
+	}
+
+	public int between(DayOfWeek other) {
+		return DayOfWeek.between(this, other);
+	}
+
 }
